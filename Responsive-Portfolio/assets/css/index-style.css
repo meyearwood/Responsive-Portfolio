@@ -1,0 +1,191 @@
+@import url('https://necolas.github.io/normalize.css/7.0.0/normalize.css');
+
+
+.site-header {
+  width: 100%;
+  background-color: #fff;
+}
+
+.site-header-inner {
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+
+.site-logo-container,
+.site-nav-container {
+  flex: 0 0 auto;
+}
+
+.site-logo-container {
+  color: #fff;
+  background-color: #4aaaa5;
+  box-sizing: border-box;
+  padding: 20px;
+}
+
+.site-logo {
+  margin: 0;
+}
+
+.site-nav-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-nav {
+  margin: auto 0;
+  flex: 0 0 auto;
+}
+
+.site-menu {
+  list-style-type: none;
+  font-family: Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+/* <a class="menu-item-link"> tag styles */
+.site-menu
+.menu-item-link {
+  color: gray;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 0 10px;
+  display: block;
+}
+
+/* <li class="site-menu-item"> tag styles */
+.site-menu
+.site-menu-item +
+.site-menu-item {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: #ccc;
+}
+
+/* Layout styles */
+.two-col-layout {
+  padding: 40px;
+}
+
+.two-col-layout-inner {
+  max-width: 960px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+.two-col-layout
+.left-col,
+.two-col-layout
+.right-col {
+  flex: 0 0 auto;
+}
+
+.two-col-layout
+.left-col {
+  width: 65%;
+}
+
+.two-col-layout
+.right-col {
+  width: 30%;
+}
+
+.two-col-layout
+.about-me,
+.two-col-layout
+.connect {
+  background-color: #fff;
+  box-sizing: border-box;
+  padding: 30px;
+}
+
+
+
+
+.top-nav {
+  text-align: right;
+  margin: 40px;
+  color: gray;
+  font-size: 20px;
+  padding: -3px;
+}
+
+.menu {
+  margin-right: 200px;
+  border-left: 30px;
+}
+
+.name {
+  background-color: #4aaaa5;
+  font-family: "Georgia", Times, serif;
+  color: #ffffff;
+  padding-left: 5px;
+  margin-left: 100px;
+  margin-right: 75%;
+}
+
+.about-me {
+  background-color: white;
+
+}
+
+.connect {
+  background-color: white;
+ 
+}
+
+.about {
+  color: #4aaaa5;
+}
+
+body {
+  background-image: url("http://www.webdesigndev.com/wp-content/uploads/2015/02/Subtle-Light-Tile-Pattern-Vol4.jpg");
+}
+
+.footer {
+  background-color: #666666;
+}
+
+@media only screen and (max-width: 640px) {
+    .site-header{
+        position: static;
+    }
+
+
+
+    .site-logo-container {
+    
+    width: 100%;
+    height: 50px;
+
+    }
+
+    .site-logo {
+
+       padding-left: 150px;
+       margin-top: -15px;
+    }
+
+ .site-nav-container {
+
+    width: 100%;
+    height: 40px;
+    margin-top: 50px;
+
+
+
+}
+
+
+@media only screen and (max-width: 768px) {
+    .site-header{
+        position: static;
+    }
+
+
+}
