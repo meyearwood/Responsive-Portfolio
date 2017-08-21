@@ -1,45 +1,51 @@
 @import url('https://necolas.github.io/normalize.css/7.0.0/normalize.css');
 
+.root-homepage
+  {
+  height: 100%;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
 
 .site-header {
   width: 100%;
   background-color: #fff;
 }
 
-.site-header-inner {
+.site-header .site-header-inner {
   max-width: 960px;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
 }
 
-.site-logo-container,
-.site-nav-container {
+.site-header .site-logo-container, .site-header .site-nav-container {
   flex: 0 0 auto;
 }
 
-.site-logo-container {
+.site-header .site-logo-container {
   color: #fff;
   background-color: #4aaaa5;
   box-sizing: border-box;
   padding: 20px;
 }
 
-.site-logo {
+.site-header .site-logo {
   margin: 0;
 }
 
-.site-nav-container {
+.site-header .site-nav-container {
   display: flex;
   flex-direction: column;
 }
 
-.site-nav {
+.site-header .site-nav {
   margin: auto 0;
   flex: 0 0 auto;
 }
 
-.site-menu {
+.site-header .site-menu {
   list-style-type: none;
   font-family: Arial, sans-serif;
   padding: 0;
@@ -47,9 +53,10 @@
   display: flex;
 }
 
+
 /* <a class="menu-item-link"> tag styles */
-.site-menu
-.menu-item-link {
+
+.site-header .site-menu .menu-item-link {
   color: gray;
   text-decoration: none;
   font-size: 18px;
@@ -57,17 +64,30 @@
   display: block;
 }
 
+
 /* <li class="site-menu-item"> tag styles */
-.site-menu
-.site-menu-item +
-.site-menu-item {
+.site-header .site-menu .site-menu-item + .site-menu-item {
   border-left-width: 1px;
   border-left-style: solid;
   border-left-color: #ccc;
 }
 
+footer {
+  background-color:#666666;
+  border-top: 10px;
+  border-top-color:#4aaaa5;
+  border-top-style: solid;
+  min-height: 100px;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
 /* Layout styles */
-.two-col-layout {
+
+
+/*.two-col-layout {
   padding: 40px;
 }
 
@@ -102,11 +122,29 @@
   background-color: #fff;
   box-sizing: border-box;
   padding: 30px;
+}*/
+
+
+/* ==============================================
+  Layout Base Styles
+============================================== */
+
+.layout .layout-inner {
+  max-width: 960px;
+  margin: 0 auto;
 }
 
+.layout, .layout .layout__primary, .layout .layout__secondary {
+  box-sizing: border-box;
+}
+
+.bio
+{ padding-bottom: 50px;
 
 
 
+
+}
 .top-nav {
   text-align: right;
   margin: 40px;
@@ -131,61 +169,110 @@
 
 .about-me {
   background-color: white;
-
+  padding-left: 40px
+  /*flex: 1 1 auto;
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin-left: 125px;
+  margin-right: 900px;
+  margin-top: 100px;*/
+  ;
 }
 
 .connect {
   background-color: white;
- 
+  color:#4aaaa5;
+  padding-left: 50px;
+
 }
 
 .about {
   color: #4aaaa5;
+  padding-top: 10px;
+
 }
 
 body {
   background-image: url("http://www.webdesigndev.com/wp-content/uploads/2015/02/Subtle-Light-Tile-Pattern-Vol4.jpg");
 }
 
-.footer {
-  background-color: #666666;
-}
-
-@media only screen and (max-width: 640px) {
-    .site-header{
-        position: static;
-    }
-
-
-
-    .site-logo-container {
-    
-    width: 100%;
-    height: 50px;
-
-    }
-
-    .site-logo {
-
-       padding-left: 150px;
-       margin-top: -15px;
-    }
-
- .site-nav-container {
-
-    width: 100%;
-    height: 40px;
-    margin-top: 50px;
-
-
+footer {
+  background-color:#666666;
+  border-top: 10px;
+  border-top-color:#4aaaa5;
+  border-top-style: solid;
+  min-height: 100px;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 300px;
 
 }
 
+/* ==============================================
+  >= 980px
+============================================== */
 
-@media only screen and (max-width: 768px) {
-    .site-header{
-        position: static;
+@media screen and (min-width: 980px) {
+  .layout .layout-inner {
+    /* Tells layout to display children using flex layout. Default direction is row */
+    display: flex;
+    justify-content: space-between;
+  }
+  .layout .layout__primary {
+    width: 65%;
+    /*flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;*/
+    /* This is shorthand for the above 3 styles... */
+    flex: 0 0 auto;
+  }
+  .layout .layout__secondary {
+    width: 30%;
+    /*flex-grow: 0;
+    flex-shrink: 0;
+    flex-basis: auto;*/
+    /* This is shorthand for the above 3 styles... */
+    flex: 0 0 auto;
+  }
+}
+
+
+/* ==============================================
+  <= 979px
+============================================== */
+
+@media screen and (max-width: 979px) {
+  .layout .layout__secondary {
+    margin-top: 30px;
+  }
+}
+
+/* ==============================================
+  <= 640px
+============================================== */
+
+@media screen and (max-width: 640px) {
+    .site-header .site-header-inner {
+        display: block;
     }
 
+    /* <li class="site-menu-item"> tag styles */
+    .site-header .site-menu .site-menu-item + .site-menu-item {
+      border-left: none;
+    }
 
+    .site-header .site-nav-container {
+        padding: 15px 0;
+    }
+
+    .site-header .site-menu-item {
+        width: 33%;
+        text-align: center;
+    }
+
+    .site-header .site-logo-container {
+        text-align: center;
+    }
 }
